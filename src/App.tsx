@@ -1,13 +1,21 @@
-import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import { Products } from "./pages/Products";
+import { Home } from "./pages/Home";
+import { Layout } from "./components/Layout";
+import "./styles.css";
 
-//Lazy load pages
-const HomeComponent = lazy(() => import("./pages/Home"));
+/* 
+  Lazy loading harder than I thought: 
+  https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually
+*/
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomeComponent />} />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
+    </Layout>
   );
 }

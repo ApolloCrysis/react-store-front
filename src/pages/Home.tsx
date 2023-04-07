@@ -6,7 +6,7 @@ import { type Product } from "../types/product";
 import { useEffect, useState } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const Home = () => {
+export const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,10 +33,9 @@ const Home = () => {
   }
 
   return (
-    <Box mt={10}>
+    <Box>
       <Link
-        // to={"/products"}
-        to={"/"}
+        to={"/products"}
         style={{
           textDecoration: "none",
         }}
@@ -60,5 +59,3 @@ const Home = () => {
     </Box>
   );
 };
-
-export default Home;
