@@ -9,12 +9,12 @@ import {
 } from "@mui/material";
 import { API_URL } from "../constants";
 import { Link } from "react-router-dom";
-import { LoadingIndicator } from "../components/LoadingIndicator";
 import { Product } from "../types/product";
 import { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
 
-export const Products = () => {
+const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -37,7 +37,7 @@ export const Products = () => {
   }, []);
 
   if (isLoading) {
-    return <LoadingIndicator />;
+    return <DataLoadingIndicator />;
   }
 
   return (
@@ -115,3 +115,5 @@ export const Products = () => {
     </>
   );
 };
+
+export default Products;

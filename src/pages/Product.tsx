@@ -8,13 +8,13 @@ import {
 } from "@mui/material";
 import { API_URL } from "src/constants";
 import { Link, useParams } from "react-router-dom";
-import { LoadingIndicator } from "../components/LoadingIndicator";
 import { type Product as ProductType } from "../types/product";
 import { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
 
-export const Product = () => {
+const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ export const Product = () => {
   }, []);
 
   if (isLoading) {
-    return <LoadingIndicator />;
+    return <DataLoadingIndicator />;
   }
 
   return (
@@ -194,3 +194,5 @@ export const Product = () => {
     </>
   );
 };
+
+export default Product;

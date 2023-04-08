@@ -1,12 +1,12 @@
 import { API_URL } from "src/constants";
 import { Box, Button, ImageList, ImageListItem } from "@mui/material";
 import { Link } from "react-router-dom";
-import { LoadingIndicator } from "src/components/LoadingIndicator";
 import { type Product } from "../types/product";
 import { useEffect, useState } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
 
-export const Home = () => {
+const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,7 +29,7 @@ export const Home = () => {
   }, []);
 
   if (isLoading) {
-    return <LoadingIndicator />;
+    return <DataLoadingIndicator />;
   }
 
   return (
@@ -59,3 +59,5 @@ export const Home = () => {
     </Box>
   );
 };
+
+export default Home;
