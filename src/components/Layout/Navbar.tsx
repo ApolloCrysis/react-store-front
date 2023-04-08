@@ -21,7 +21,7 @@ export const Navbar = () => {
           }}
         >
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Store-Front
+            Storefront
           </Typography>
         </Link>
         <Link to="/cart">

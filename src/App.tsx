@@ -1,8 +1,9 @@
-import { Route, Routes } from "react-router-dom";
-import { Products } from "./pages/Products";
+import "./styles.css";
 import { Home } from "./pages/Home";
 import { Layout } from "./components/Layout";
-import "./styles.css";
+import { Product } from "./pages/Product";
+import { Products } from "./pages/Products";
+import { Route, Routes } from "react-router-dom";
 
 /* 
   Lazy loading harder than I thought: 
@@ -15,6 +16,7 @@ export default function App() {
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<Product />} />
       </Routes>
     </Layout>
   );

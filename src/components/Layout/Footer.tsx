@@ -16,7 +16,7 @@ export const Footer = () => {
         <Grid container direction="column" alignItems="center">
           <Grid item xs={12}>
             <Typography color="black" variant="h5">
-              Store Front
+              Storefront
             </Typography>
           </Grid>
           <Grid item xs={12}>
