@@ -13,11 +13,14 @@ import { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
+import { CartContext } from "src/context/CartContext";
+import { useContext } from "react";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const getData = async () => {
@@ -165,7 +168,7 @@ const Product = () => {
 
                   <Box display="flex" justifyContent="space-between">
                     <Button
-                      onClick={() => alert("Added to cart")}
+                      onClick={() => addToCart(product)}
                       variant="contained"
                       endIcon={<AddIcon />}
                     >

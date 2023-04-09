@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useContext } from "react";
 import { CartLineItem } from "../components/CartLineItem";
+import Button from "@mui/material/Button";
 
 const Cart = () => {
-  const { cartItems, increaseAmount } = useContext(CartContext);
+  const { cartItems, clearCart, totalPriceAmount } = useContext(CartContext);
 
   if (cartItems.length === 0) {
     return (
@@ -24,7 +25,6 @@ const Cart = () => {
           display: "flex",
           width: "fit-content",
           marginTop: "15px",
-          color: "#00000099",
           textDecoration: "none",
         }}
       >
@@ -33,15 +33,17 @@ const Cart = () => {
       </Link>
 
       {cartItems.map((cartItem) => (
-        <CartLineItem
-          key={cartItem.id}
-          item={cartItem}
-          increaseAmount={increaseAmount}
-        />
+        <CartLineItem key={cartItem.id} item={cartItem} />
       ))}
+
       <Box mt={2}>
-        <Typography variant="h4">Total: $500</Typography>
+        <Typography variant="h4">
+          Total: ${totalPriceAmount.toFixed(2)}
+        </Typography>
       </Box>
+      <Button type="button" onClick={clearCart}>
+        Clear Cart
+      </Button>
     </Box>
   );
 };

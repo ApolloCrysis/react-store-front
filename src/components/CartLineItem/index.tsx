@@ -8,15 +8,20 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import { CartContext } from "src/context/CartContext";
 import { CartItem } from "../../types/cart";
+import { useContext } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 type CartLineItemProps = {
   item: CartItem;
-  increaseAmount: (id: number) => void;
 };
 
-export const CartLineItem = ({ item, increaseAmount }: CartLineItemProps) => {
+export const CartLineItem = ({ item }: CartLineItemProps) => {
+  const { decreaseAmount, increaseAmount, removeFromCart } =
+    useContext(CartContext);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardContent>
@@ -49,6 +54,16 @@ export const CartLineItem = ({ item, increaseAmount }: CartLineItemProps) => {
           <Tooltip title="Add">
             <IconButton size="small" onClick={() => increaseAmount(item.id)}>
               <AddIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Remove">
+            <IconButton size="small" onClick={() => decreaseAmount(item.id)}>
+              <RemoveIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Delete">
+            <IconButton size="small" onClick={() => removeFromCart(item.id)}>
+              <DeleteIcon />
             </IconButton>
           </Tooltip>
         </CardActions>
