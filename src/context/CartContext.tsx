@@ -4,11 +4,15 @@ import { type CartItem } from "../types/cart";
 
 type CartContextType = {
   addToCart: (product: Product) => void;
+  cartItems: CartItem[];
+  increaseAmount: (productId: number) => void;
   totalItems: number;
 };
 
 export const CartContext = createContext<CartContextType>({
   addToCart: () => {},
+  cartItems: [],
+  increaseAmount: () => {},
   totalItems: 0,
 });
 
@@ -26,7 +30,7 @@ export const CartProvider = ({ children }: React.PropsWithChildren) => {
     if (existingCartItem) {
       const items = cartItems.map((cartItem) => {
         if (cartItem.id === product.id) {
-          existingCartItem.quantity += 1;
+          cartItem.quantity += 1;
         }
         return cartItem;
       });
@@ -37,15 +41,29 @@ export const CartProvider = ({ children }: React.PropsWithChildren) => {
         name: product.title,
         quantity: 1,
         price: product.price,
+        image: product.image,
       };
       setCartItems([...cartItems, newCartItem]);
     }
+  };
+
+  const increaseAmount = (productId: number) => {
+    const items = cartItems.map((cartItem) => {
+      if (cartItem.id === productId) {
+        return { ...cartItem, quantity: cartItem.quantity + 1 };
+      } else {
+        return cartItem;
+      }
+    });
+    setCartItems(items);
   };
 
   return (
     <CartContext.Provider
       value={{
         addToCart,
+        cartItems,
+        increaseAmount,
         totalItems: totalItems,
       }}
     >
