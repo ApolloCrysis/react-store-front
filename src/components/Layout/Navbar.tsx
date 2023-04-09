@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { AppBar, Typography, Box, useTheme } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import { Badge, IconButton } from "@mui/material";
+import { CartContext } from "src/context/CartContext";
 
 export const Navbar = () => {
   const theme = useTheme();
+  const { totalItems } = useContext(CartContext);
   return (
     <AppBar position="sticky" sx={{ marginBottom: "1rem" }}>
       <Box
@@ -26,7 +29,7 @@ export const Navbar = () => {
         </Link>
         <Link to="/cart">
           <IconButton>
-            <Badge badgeContent={5} color="warning">
+            <Badge badgeContent={totalItems} color="warning">
               <ShoppingCartIcon color={"action"} sx={{ fontSize: "30px" }} />
             </Badge>
           </IconButton>

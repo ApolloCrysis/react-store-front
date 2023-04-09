@@ -4,7 +4,3 @@ export type CartItem = {
   quantity: number;
   price: number;
 };
-
-export type Cart = {
-  items: CartItem[];
-};
