@@ -13,10 +13,12 @@ import { Product } from "../types/product";
 import { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
-
+import { CartContext } from "src/context/CartContext";
+import { useContext } from "react";
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const getData = async () => {
@@ -100,7 +102,7 @@ const Products = () => {
                 </Link>
                 <CardActions>
                   <Button
-                    onClick={() => alert("add to cart")}
+                    onClick={() => addToCart(productData)}
                     variant="contained"
                     endIcon={<AddIcon />}
                   >
