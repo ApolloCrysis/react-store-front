@@ -1,9 +1,7 @@
 import { API_URL } from "src/constants";
-import { Box, Button, ImageList, ImageListItem } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, ImageList, ImageListItem } from "@mui/material";
 import { type Product } from "../types/product";
 import { useEffect, useState } from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
 
 const Home = () => {
@@ -34,16 +32,6 @@ const Home = () => {
 
   return (
     <Box>
-      <Link
-        to={"/products"}
-        style={{
-          textDecoration: "none",
-        }}
-      >
-        <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
-          Shop now
-        </Button>
-      </Link>
       <ImageList cols={4} rowHeight={250} style={{ overflow: "hidden" }}>
         {products.map((item) => (
           <ImageListItem key={item.image}>

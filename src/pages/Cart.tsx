@@ -18,7 +18,7 @@ const Cart = () => {
   }
 
   return (
-    <Box mt={10}>
+    <Box>
       <Link
         to="/products"
         style={{
@@ -29,7 +29,7 @@ const Cart = () => {
         }}
       >
         <ArrowBackIcon />
-        <Typography>Continue Shopping</Typography>
+        <Typography variant="body1">Continue Shopping</Typography>
       </Link>
 
       {cartItems.map((cartItem) => (
@@ -41,7 +41,7 @@ const Cart = () => {
           Total: ${totalPriceAmount.toFixed(2)}
         </Typography>
       </Box>
-      <Button type="button" onClick={clearCart}>
+      <Button size="small" type="button" onClick={clearCart}>
         Clear Cart
       </Button>
     </Box>

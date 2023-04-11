@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -44,7 +45,9 @@ const Products = () => {
 
   return (
     <>
-      <Typography variant="h4">Products</Typography>
+      <Box mb={"2rem"}>
+        <Typography variant="h4">Products</Typography>
+      </Box>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -102,6 +105,7 @@ const Products = () => {
                 </Link>
                 <CardActions>
                   <Button
+                    size="small"
                     onClick={() => addToCart(productData)}
                     variant="contained"
                     endIcon={<AddIcon />}
