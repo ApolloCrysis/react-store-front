@@ -98,14 +98,15 @@ export const Navbar = () => {
         </Box>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {navItems.map((navItem) => (
-            <Button
-              key={navItem.title}
-              href={navItem.href}
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              {navItem.title}
-            </Button>
+            <Link to={navItem.href} style={{ textDecoration: "none" }}>
+              <Button
+                key={navItem.title}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {navItem.title}
+              </Button>
+            </Link>
           ))}
         </Box>
         <Tooltip title="Cart">

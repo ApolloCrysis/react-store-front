@@ -24,26 +24,31 @@ const Cart = () => {
         style={{
           display: "flex",
           width: "fit-content",
-          marginTop: "15px",
           textDecoration: "none",
+          marginBottom: "1rem",
         }}
       >
         <ArrowBackIcon />
         <Typography variant="body1">Continue Shopping</Typography>
       </Link>
-
       {cartItems.map((cartItem) => (
         <CartLineItem key={cartItem.id} item={cartItem} />
       ))}
-
-      <Box mt={2}>
+      <Box display="flex" pt={"1rem"}>
         <Typography variant="h4">
           Total: ${totalPriceAmount.toFixed(2)}
         </Typography>
+        <Box ml={"1rem"}>
+          <Button
+            variant="contained"
+            size="small"
+            type="button"
+            onClick={clearCart}
+          >
+            Clear Cart
+          </Button>
+        </Box>
       </Box>
-      <Button size="small" type="button" onClick={clearCart}>
-        Clear Cart
-      </Button>
     </Box>
   );
 };

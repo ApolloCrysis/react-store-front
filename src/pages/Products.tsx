@@ -57,6 +57,7 @@ const Products = () => {
           return (
             <Grid item xs={2} sm={4} md={4} key={productData.id}>
               <Card
+                raised={true}
                 sx={{
                   transition: "all 0.3s",
                   "&:hover": {
