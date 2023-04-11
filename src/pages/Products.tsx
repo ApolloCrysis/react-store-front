@@ -45,8 +45,13 @@ const Products = () => {
 
   return (
     <>
-      <Box mb={"2rem"}>
+      <Box mb={"2rem"} display="flex" justifyContent="space-between">
         <Typography variant="h4">Products</Typography>
+        <Link to={"/add-product"} style={{ textDecoration: "none" }}>
+          <Button variant="contained" type="button">
+            Add Product
+          </Button>
+        </Link>
       </Box>
       <Grid
         container

@@ -4,11 +4,13 @@ import { Container } from "@mui/system";
 export const Footer = () => {
   return (
     <Box
+      component="footer"
       sx={{
         width: "100%",
         height: "auto",
         paddingTop: "1rem",
         paddingBottom: "1rem",
+        marginTop: "auto",
       }}
     >
       <Container maxWidth="lg">
