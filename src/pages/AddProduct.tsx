@@ -98,7 +98,7 @@ const AddProduct = () => {
           </Button>
           <Link to={"/products"} style={{ textDecoration: "none" }}>
             <Button variant="contained" size="small" type="button">
-              Back to results
+              Cancel
             </Button>
           </Link>
         </ButtonGroup>
