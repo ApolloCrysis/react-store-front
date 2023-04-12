@@ -87,12 +87,19 @@ const AddProduct = () => {
             />
           )}
         />
-        <ButtonGroup variant="contained">
-          <Button size="small" type="submit">
+        <ButtonGroup>
+          <Button
+            variant="contained"
+            size="small"
+            type="submit"
+            style={{ marginRight: "1rem" }}
+          >
             Save
           </Button>
           <Link to={"/products"} style={{ textDecoration: "none" }}>
-            <Button type="button">Back to results</Button>
+            <Button variant="contained" size="small" type="button">
+              Back to results
+            </Button>
           </Link>
         </ButtonGroup>
       </form>

@@ -33,7 +33,7 @@ const Cart = () => {
   return (
     <>
       <Box>
-        <Typography variant="h4">Your cart</Typography>
+        <Typography variant="h4">Your Cart</Typography>
       </Box>
       <Box>
         <Link

@@ -6,6 +6,7 @@ import App from "./App";
 import theme from "./theme";
 import { BrowserRouter } from "react-router-dom";
 import CartContextProvider from "./context/CartContext";
+import ScrollToTop from "./utils/common";
 
 const rootElement = document.querySelector("#root");
 if (!rootElement) throw new Error("Failed to find the root element");
@@ -17,6 +18,7 @@ root.render(
       <BrowserRouter>
         <StrictMode>
           <CssBaseline />
+          <ScrollToTop />
           <App />
         </StrictMode>
       </BrowserRouter>

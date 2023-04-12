@@ -10,11 +10,11 @@ import { API_URL } from "src/constants";
 import { Link, useParams } from "react-router-dom";
 import { type Product as ProductType } from "../types/product";
 import { useEffect, useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
 import { CartContext } from "src/context/CartContext";
 import { useContext } from "react";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Product = () => {
   const { id } = useParams();
@@ -172,9 +172,10 @@ const Product = () => {
                     >
                       <Button
                         size="small"
+                        type="button"
                         onClick={() => addToCart(product)}
                         variant="contained"
-                        endIcon={<AddIcon />}
+                        endIcon={<AddShoppingCartIcon />}
                       >
                         Add to cart
                       </Button>
@@ -183,7 +184,6 @@ const Product = () => {
                         style={{
                           display: "flex",
                           width: "fit-content",
-                          marginTop: "1rem",
                           color: "grey",
                           textDecoration: "none",
                         }}

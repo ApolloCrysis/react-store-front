@@ -5,10 +5,14 @@ import { Navbar } from "./Navbar";
 
 export const Layout = ({ children }: React.PropsWithChildren) => {
   return (
-    <Box minHeight={"100vh"} display={"flex"} flexDirection={"column"}>
+    <>
       <Navbar />
-      <Container maxWidth={false}>{children}</Container>
-      <Footer />
-    </Box>
+      <Container maxWidth="lg">
+        <Box minHeight={"100vh"} display={"flex"} flexDirection={"column"}>
+          {children}
+          <Footer />
+        </Box>
+      </Container>
+    </>
   );
 };

@@ -1,8 +1,10 @@
 import { API_URL } from "src/constants";
-import { Box, ImageList, ImageListItem } from "@mui/material";
+import { Box, ImageList, ImageListItem, Button } from "@mui/material";
 import { type Product } from "../types/product";
 import { useEffect, useState } from "react";
 import DataLoadingIndicator from "src/components/LoadingIndicators/DataLoadingIndicator";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -44,6 +46,18 @@ const Home = () => {
           </ImageListItem>
         ))}
       </ImageList>
+      <Box display={"flex"} justifyContent={"center"}>
+        <Link to={"/products"} style={{ textDecoration: "none" }}>
+          <Button
+            variant="contained"
+            size="small"
+            type="button"
+            endIcon={<AddShoppingCartIcon />}
+          >
+            Shop Now
+          </Button>
+        </Link>
+      </Box>
     </Box>
   );
 };
