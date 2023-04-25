@@ -1,35 +1,36 @@
-# DVT Tech Challenge
-This challenge is part of the hiring process at DVT for frontend developer roles. The objective is to produce this without investing any more time than necessary. As such, we'd like to see your regular conventions when writing an application.
+## Major technologies
 
-## Why are we asking you to do this?
-At DVT, we try to set our standards high. We would love for strong candidates to join our team and help us aim to be the best. This challenge is to help us understand your proficiency over a number of facets of development, which we value.
+- [React.js 18](https://reactjs.org/)
+- [MUI 5](https://mui.com/) (formerly Material-UI)
+- [Webpack 5](https://webpack.js.org/)
+- Typescript and Prettier are used to improve the developer experience
 
-Some of these are
-- Good commit & branching conventions
-- Handling of network requests
-- Typescript
-- Routing
-- State management
-- Framework (Angular or React) conventions
-- Semantic HTML
-- CSS and general ability to produce a polished end result  - responsiveness is low priority, but appreciated
+## Requires
 
-## What do you need to produce?
-We're asking you to build a basic storefront using [https://fakestoreapi](Fake Store API)
+- [Node.js 16.x](https://nodejs.org/en/)
+- [NPM >= 7.x](https://github.com/npm/cli)
 
-We would like for you to get all products and display them as cards on a page, with the ability to add items to a cart.
+## Recommended tools
 
-There is a _lot_ of room to go above the expected outcome, and please feel free to tackle something that is relevant to your current level (this would be optional)
+- [Visual Studio Code](https://code.visualstudio.com/)
+  - [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatting)
 
-_Some_ examples of this would be 
-- Using a global state manager in an efficient way
-- Multiple routes
-- Great visuals
+## Getting Started
 
-## Some additional notes
-- Please be considerate of what dependencies and build tools you are using
-- If you opt to use any @ts-ignores or similar, please leave a comment with an explanation
-- Feel free to leave comments/notes in your readme.md
+1. Navigate to the project root
 
-## Submission
-Please use this repo as your submission as a finalised pull request and notify us when you are complete.
+```sh
+cd myapp
+```
+
+2. Using NPM 7+, run the following command to install dependencies
+
+```sh
+npm install
+```
+
+3. Run the following command to build and start the development version of your app with live reloading.
+
+```sh
+npm run dev
+```
